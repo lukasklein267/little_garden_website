@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/little-garden-25ffc85e-9512-41cd-b2ad-b1fe651318d2/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/little-garden-25ffc85e-9512-41cd-b2ad-b1fe651318d2/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/little-garden-25ffc85e-9512-41cd-b2ad-b1fe651318d2/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/little-garden-25ffc85e-9512-41cd-b2ad-b1fe651318d2/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/little-garden-25ffc85e-9512-41cd-b2ad-b1fe651318d2/styles.css">
+  <script src="_ds/little-garden-25ffc85e-9512-41cd-b2ad-b1fe651318d2/_ds_bundle.js"></script>
+  <style>html,body{margin:0;padding:0;background:var(--surface-page);}*{box-sizing:border-box;}</style>
+</helmet>
+<div style="font-family:var(--font-body);color:var(--text-body);background:var(--surface-page)">
+
+  <dc-import name="Nav" active="contact" hint-size="100%,72px"></dc-import>
+
+  <!-- HEADER -->
+  <section style="text-align:center;max-width:760px;margin:0 auto;padding:clamp(52px,7vw,84px) clamp(20px,5vw,48px) clamp(28px,4vw,44px)">
+    <div style="font-size:13px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-accent);margin-bottom:20px">Reservierung & Kontakt</div>
+    <h1 style="font-family:var(--font-display);font-weight:400;font-size:clamp(40px,6vw,72px);line-height:1.04;letter-spacing:-0.02em;color:var(--text-strong);margin:0 0 20px">Besuch uns</h1>
+    <p style="font-size:clamp(16px,1.3vw,19px);line-height:1.7;color:var(--text-muted);margin:0">Reservier deinen Tisch im Voraus oder schreib uns — wir freuen uns auf dich.</p>
+  </section>
+
+  <section style="max-width:1120px;margin:0 auto;padding:0 clamp(20px,5vw,48px) clamp(64px,8vw,104px);display:grid;grid-template-columns:1.05fr 0.95fr;gap:clamp(32px,5vw,56px);align-items:start">
+
+    <!-- FORM CARD -->
+    <div style="background:var(--surface-card);border:1.5px solid var(--border-soft);border-radius:24px;padding:clamp(28px,3vw,40px);box-shadow:0 18px 40px -26px rgba(17,67,62,0.3)">
+      <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+      <form onSubmit="{{ handleSubmit }}">
+        <h2 style="font-family:var(--font-display);font-weight:400;font-size:26px;color:var(--text-strong);margin:0 0 6px">Tisch reservieren</h2>
+        <p style="margin:0 0 24px;font-size:14px;color:var(--text-muted)">Wir bestätigen deine Anfrage per E-Mail.</p>
+        <div style="display:flex;flex-direction:column;gap:18px">
+          <x-import component-from-global-scope="LittleGardenDesignSystem_25ffc8.Input" label="Name" placeholder="Dein Name" hint-size="100%,68px"></x-import>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+            <x-import component-from-global-scope="LittleGardenDesignSystem_25ffc8.Input" label="E-Mail" type="email" placeholder="du@example.com" hint-size="100%,68px"></x-import>
+            <x-import component-from-global-scope="LittleGardenDesignSystem_25ffc8.Input" label="Telefon" type="tel" placeholder="+49 …" hint-size="100%,68px"></x-import>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px">
+            <x-import component-from-global-scope="LittleGardenDesignSystem_25ffc8.Input" label="Datum" type="date" hint-size="100%,68px"></x-import>
+            <x-import component-from-global-scope="LittleGardenDesignSystem_25ffc8.Input" label="Uhrzeit" type="time" hint-size="100%,68px"></x-import>
+            <x-import component-from-global-scope="LittleGardenDesignSystem_25ffc8.Input" label="Personen" type="number" placeholder="2" hint-size="100%,68px"></x-import>
+          </div>
+          <x-import component-from-global-scope="LittleGardenDesignSystem_25ffc8.Input" label="Nachricht (optional)" placeholder="Allergien, Anlass, Wünsche …" hint-size="100%,68px"></x-import>
+          <div style="margin-top:6px">
+            <x-import component-from-global-scope="LittleGardenDesignSystem_25ffc8.Button" variant="primary" size="lg" fullWidth="true" onClick="{{ handleSubmit }}" hint-size="100%,52px">Reservierung anfragen</x-import>
+          </div>
+          <p style="margin:0;font-size:12px;color:var(--text-muted);text-align:center;line-height:1.5">Mit dem Absenden stimmst du zu, dass wir dich bezüglich deiner Reservierung kontaktieren.</p>
+        </div>
+      </form>
+      </sc-if>
+      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+      <div style="text-align:center;padding:32px 8px">
+        <div style="font-size:48px;margin-bottom:16px">🌿</div>
+        <h2 style="font-family:var(--font-display);font-weight:400;font-size:30px;color:var(--text-strong);margin:0 0 12px">Vielen Dank!</h2>
+        <p style="margin:0 auto;font-size:16px;line-height:1.7;color:var(--text-muted);max-width:340px">Deine Reservierungsanfrage ist bei uns eingegangen. Wir melden uns in Kürze per E-Mail bei dir. Bis bald im Garten! 💚</p>
+      </div>
+      </sc-if>
+    </div>
+
+    <!-- INFO -->
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <div style="background:var(--surface-alt);border-radius:22px;padding:30px 28px;display:flex;flex-direction:column;gap:22px">
+        <div style="display:flex;gap:14px">
+          <span style="font-size:24px;line-height:1.2">📍</span>
+          <div>
+            <div style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-accent);margin-bottom:5px">Adresse</div>
+            <p style="margin:0;font-size:16px;line-height:1.6;color:var(--text-strong)">Weiße Herzstraße 10<br>91054 Erlangen</p>
+          </div>
+        </div>
+        <div style="height:1px;background:var(--border-soft)"></div>
+        <div style="display:flex;gap:14px">
+          <span style="font-size:24px;line-height:1.2">🕑</span>
+          <div style="flex:1">
+            <div style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-accent);margin-bottom:8px">Öffnungszeiten</div>
+            <div style="display:flex;justify-content:space-between;font-size:15px;color:var(--text-body);padding:3px 0"><span>Dienstag – Freitag</span><span style="color:var(--text-strong);font-weight:500">11:30 – 22:00</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:15px;color:var(--text-body);padding:3px 0"><span>Samstag & Sonntag</span><span style="color:var(--text-strong);font-weight:500">12:00 – 22:00</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:15px;color:var(--text-muted);padding:3px 0"><span>Montag</span><span>Ruhetag</span></div>
+          </div>
+        </div>
+        <div style="height:1px;background:var(--border-soft)"></div>
+        <div style="display:flex;gap:14px">
+          <span style="font-size:24px;line-height:1.2">✉️</span>
+          <div>
+            <div style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-accent);margin-bottom:5px">Kontakt</div>
+            <p style="margin:0;font-size:16px;line-height:1.7;color:var(--text-strong)">+49 9131 920 730<br><a href="mailto:hallo@littlegarden-er.de" style="color:var(--color-primary);text-decoration:none">hallo@littlegarden-er.de</a><br><a href="https://instagram.com/littlegarden_er" target="_blank" rel="noopener" style="color:var(--color-primary);text-decoration:none">@littlegarden_er</a></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAP PLACEHOLDER -->
+      <div style="position:relative;border-radius:22px;overflow:hidden;aspect-ratio:16/10;background:linear-gradient(135deg,var(--lg-teal-100),var(--lg-cream-100));border:1.5px solid var(--border-strong)">
+        <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(111,179,172,0.28) 1px,transparent 1px),linear-gradient(90deg,rgba(111,179,172,0.28) 1px,transparent 1px);background-size:34px 34px"></div>
+        <div style="position:absolute;left:0;top:46%;width:100%;height:14px;background:var(--lg-gold-300);opacity:0.55;transform:rotate(-7deg)"></div>
+        <div style="position:absolute;left:52%;top:0;width:12px;height:100%;background:var(--lg-teal-300);opacity:0.5"></div>
+        <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center;gap:6px">
+          <div style="background:var(--surface-dark);color:var(--text-on-dark);font-size:13px;font-weight:600;padding:7px 14px;border-radius:999px;white-space:nowrap;box-shadow:0 8px 20px -8px rgba(17,67,62,0.6)">Little Garden 🌱</div>
+          <div style="font-size:30px;line-height:1;filter:drop-shadow(0 4px 6px rgba(17,67,62,0.4))">📍</div>
+        </div>
+        <a href="https://maps.google.com/?q=Weiße+Herzstraße+10+91054+Erlangen" target="_blank" rel="noopener" style="position:absolute;right:14px;bottom:14px;background:var(--surface-card);color:var(--color-primary);font-size:13px;font-weight:600;padding:8px 14px;border-radius:999px;text-decoration:none;box-shadow:0 6px 16px -8px rgba(17,67,62,0.4)">In Maps öffnen →</a>
+      </div>
+    </div>
+
+  </section>
+
+  <dc-import name="Footer" hint-size="100%,400px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { sent: false };
+  renderVals() {
+    return {
+      sent: this.state.sent,
+      notSent: !this.state.sent,
+      handleSubmit: (e) => {
+        if (e && e.preventDefault) e.preventDefault();
+        this.setState({ sent: true });
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

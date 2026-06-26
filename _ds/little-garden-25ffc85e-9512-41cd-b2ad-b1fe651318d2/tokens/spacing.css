@@ -1,0 +1,47 @@
+/* Little Garden — Spacing, radii, shadows, layout tokens */
+
+:root {
+  /* ---- Spacing scale (4px base) ---- */
+  --space-0:  0;
+  --space-1:  0.25rem;  /* 4 */
+  --space-2:  0.5rem;   /* 8 */
+  --space-3:  0.75rem;  /* 12 */
+  --space-4:  1rem;     /* 16 */
+  --space-5:  1.5rem;   /* 24 */
+  --space-6:  2rem;     /* 32 */
+  --space-7:  3rem;     /* 48 */
+  --space-8:  4rem;     /* 64 */
+  --space-9:  6rem;     /* 96 */
+  --space-10: 8rem;     /* 128 */
+
+  /* ---- Radii — soft, organic but not pill-everything ---- */
+  --radius-xs:  4px;
+  --radius-sm:  8px;
+  --radius-md:  14px;
+  --radius-lg:  22px;
+  --radius-xl:  32px;
+  --radius-pill: 999px;
+
+  /* ---- Borders ---- */
+  --border-width: 1.5px;
+
+  /* ---- Shadows — warm-tinted, soft, low-spread (natural daylight feel) ---- */
+  --shadow-xs: 0 1px 2px rgba(17, 67, 62, 0.06);
+  --shadow-sm: 0 2px 8px rgba(17, 67, 62, 0.08);
+  --shadow-md: 0 8px 24px rgba(17, 67, 62, 0.10);
+  --shadow-lg: 0 18px 48px rgba(17, 67, 62, 0.14);
+  --shadow-gold: 0 8px 24px rgba(194, 136, 79, 0.18);
+
+  /* ---- Layout ---- */
+  --container-sm:  640px;
+  --container-md:  960px;
+  --container-lg:  1200px;
+  --container-xl:  1360px;
+
+  /* ---- Motion ---- */
+  --ease-out:   cubic-bezier(0.22, 1, 0.36, 1); /* @kind other */
+  --ease-soft:  cubic-bezier(0.4, 0, 0.2, 1);   /* @kind other */
+  --dur-fast:   140ms; /* @kind other */
+  --dur-base:   240ms; /* @kind other */
+  --dur-slow:   420ms; /* @kind other */
+}

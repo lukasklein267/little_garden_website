@@ -1,0 +1,62 @@
+/* Little Garden — Color tokens
+   Warm + natural, vegetable-forward. Teal greens + warm gold-browns on cream. */
+
+:root {
+  /* ---- Brand raw palette ---- */
+  --lg-teal-900: #11433E;   /* deepest teal — text on cream, dark surfaces */
+  --lg-teal-700: #1C645C;   /* hover / pressed teal */
+  --lg-teal-500: #298A81;   /* PRIMARY teal/green */
+  --lg-teal-300: #6FB3AC;   /* muted teal — borders, accents */
+  --lg-teal-100: #D6E8E5;   /* teal tint — soft fills */
+
+  --lg-gold-700: #9A6A3A;   /* deep caramel — text accent */
+  --lg-gold-500: #C2884F;   /* SECONDARY warm brown/gold */
+  --lg-gold-300: #DCB488;   /* light gold — fills, dividers */
+  --lg-gold-100: #F0E2D0;   /* gold tint — subtle fills */
+
+  --lg-cream-50:  #FCF6EF;  /* BACKGROUND creme */
+  --lg-cream-100: #F6ECDE;  /* slightly deeper cream — alt sections */
+  --lg-cream-200: #ECDFCB;  /* warm divider on cream */
+
+  --lg-white:  #FFFFFF;
+  --lg-black:  #000000;
+  --lg-ink-700:#2B2B28;     /* near-black body text, softer than pure black */
+  --lg-ink-500:#5B5B54;     /* muted body / captions */
+
+  /* ---- Garden accents (vegetable-forward, used sparingly) ---- */
+  --lg-leaf-500:  #5C8C3E;  /* fresh herb green */
+  --lg-carrot-500:#E08A3C;  /* warm carrot orange */
+  --lg-chili-500: #C24B3A;  /* tomato/chili red — alerts */
+
+  /* ---- Semantic aliases ---- */
+  --color-primary:        var(--lg-teal-500);
+  --color-primary-hover:  var(--lg-teal-700);
+  --color-primary-press:  var(--lg-teal-900);
+  --color-primary-tint:   var(--lg-teal-100);
+
+  --color-secondary:      var(--lg-gold-500);
+  --color-secondary-hover:var(--lg-gold-700);
+  --color-secondary-tint: var(--lg-gold-100);
+
+  --surface-page:    var(--lg-cream-50);
+  --surface-alt:     var(--lg-cream-100);
+  --surface-card:    var(--lg-white);
+  --surface-dark:    var(--lg-teal-900);
+  --surface-invert:  var(--lg-teal-500);
+
+  --text-strong:   var(--lg-teal-900);
+  --text-body:     var(--lg-ink-700);
+  --text-muted:    var(--lg-ink-500);
+  --text-on-dark:  var(--lg-cream-50);
+  --text-accent:   var(--lg-gold-700);
+
+  --border-soft:   var(--lg-cream-200);
+  --border-strong: var(--lg-teal-300);
+  --border-gold:   var(--lg-gold-300);
+
+  --color-success: var(--lg-leaf-500);
+  --color-warning: var(--lg-carrot-500);
+  --color-danger:  var(--lg-chili-500);
+
+  --focus-ring:    var(--lg-teal-500);
+}

@@ -1,0 +1,19 @@
+/* Little Garden — Webfonts
+   Yeseva One : display serif (headlines, logo-adjacent moments)
+   Montserrat : body / UI sans (variable weight 100–900) */
+
+@font-face {
+  font-family: "Yeseva One";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/YesevaOne-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../assets/fonts/Montserrat-VariableFont_wght.ttf") format("truetype-variations");
+}

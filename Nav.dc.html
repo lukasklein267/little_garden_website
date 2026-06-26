@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/little-garden-25ffc85e-9512-41cd-b2ad-b1fe651318d2/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/little-garden-25ffc85e-9512-41cd-b2ad-b1fe651318d2/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/little-garden-25ffc85e-9512-41cd-b2ad-b1fe651318d2/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/little-garden-25ffc85e-9512-41cd-b2ad-b1fe651318d2/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/little-garden-25ffc85e-9512-41cd-b2ad-b1fe651318d2/styles.css">
+  <script src="_ds/little-garden-25ffc85e-9512-41cd-b2ad-b1fe651318d2/_ds_bundle.js"></script>
+</helmet>
+<nav style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:14px clamp(20px,5vw,48px);background:rgba(252,246,239,0.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1.5px solid var(--border-soft);font-family:var(--font-body)">
+  <a href="index.html" style="display:flex;align-items:center;flex-shrink:0">
+    <img src="assets/logos/logo-bright.png" alt="Little Garden" style="height:44px;width:auto;display:block">
+  </a>
+  <div style="display:flex;align-items:center;gap:clamp(20px,3vw,38px)">
+    <a href="index.html" style="{{ homeStyle }}">Home</a>
+    <a href="Speisekarte.dc.html" style="{{ menuStyle }}">Speisekarte</a>
+    <a href="Ueber-uns.dc.html" style="{{ aboutStyle }}">Über uns</a>
+    <a href="Kontakt.dc.html" style="{{ contactStyle }}">Kontakt</a>
+  </div>
+  <a href="Kontakt.dc.html" style="text-decoration:none;flex-shrink:0">
+    <x-import component-from-global-scope="LittleGardenDesignSystem_25ffc8.Button" variant="primary" hint-size="auto,40px">Tisch reservieren</x-import>
+  </a>
+</nav>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:72},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;menu&quot;,&quot;about&quot;,&quot;contact&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  linkStyle(active) {
+    return {
+      fontFamily: "var(--font-body)",
+      fontWeight: 600,
+      fontSize: "15px",
+      letterSpacing: "0.01em",
+      textDecoration: "none",
+      paddingBottom: "3px",
+      borderBottom: active ? "2px solid var(--color-primary)" : "2px solid transparent",
+      color: active ? "var(--color-primary)" : "var(--text-strong)",
+      transition: "color 140ms ease, border-color 140ms ease",
+      whiteSpace: "nowrap"
+    };
+  }
+  renderVals() {
+    const a = this.props.active || "home";
+    return {
+      homeStyle: this.linkStyle(a === "home"),
+      menuStyle: this.linkStyle(a === "menu"),
+      aboutStyle: this.linkStyle(a === "about"),
+      contactStyle: this.linkStyle(a === "contact")
+    };
+  }
+}
+</script>
+</body>
+</html>
